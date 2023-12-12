@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Employee Details</title>
+</head>
+<body>
+    <table id="EmployeeDetails">
+        <thead>
+            <tr>
+                <th>Employee Namme</th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Address</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+
+    <script>
+        var employees = [
+        {Name : 'Shivam Ranpise', Designation : 'Java Developer', DateOfJoining : '12-12-2023', Address : 'Pune', Salary : '600000'},
+        {Name : 'Rehman Kalawant', Designation : 'Python Developer', DateOfJoining : '01-10-2023', Address : 'Mumbai', Salary : '7700000'},
+        {Name : 'Dhawal Pawar', Designation : 'Technical Writer', DateOfJoining : '05-12-2023', Address : 'Kolhapur', Salary : '550000'},
+        {Name : 'Vikesh Dhawan', Designation : 'Technical Writer', DateOfJoining : '10-12-2023', Address : 'Pune', Salary : '800000'},
+        {Name : 'Shubham Pal', Designation : 'Technical Writer', DateOfJoining : '06-06-2023', Address : 'Wagholi', Salary : '600000'}
+        ];
+
+        function desplayEmpDetails() {
+
+            var tableBody = document.getElementById('EmployeeDetails').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+
+            employees.forEach(function (employee) {
+                if(employee.Designation === 'Technical Writer' && employee.Salary > 500000 && employee.Salary < 700000){
+                    var row = tableBody.insertRow();
+                    row.insertCell(0).innerHTML = employee.Name;
+                    row.insertCell(1).innerHTML = employee.Designation;
+                    row.insertCell(2).innerHTML = employee.DateOfJoining;
+                    
+                }
+            });
+        }
+
+        desplayEmpDetails();
+    </script>
+</body>
+</html>
